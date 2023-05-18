@@ -1,30 +1,31 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+
+<script>
+//Importiamo i componenti da usare
+import AppTitle from './components/AppTitle.vue'
+import AppContent from './components/AppContent.vue'
+//Definiamo l'oggetto che conterrà la lista dei componenti importati, che vogliamo usare
+export default {
+  components: {
+    AppTitle,
+    AppContent
+  }
+}
 </script>
 
+<!-- Qui inseriamo l'HTML della nostra App -->
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <header>
+    <!-- Usiamo i componenti importati sopra -->
+    <!-- il contenuto è nei relativi file (cartella "components") -->
+    <AppTitle />
+  </header>
+
+  <main>
+    <!-- Usiamo i componenti importati sopra -->
+    <!-- il contenuto è nei relativi file (cartella "components") -->
+    <AppContent />
+  </main>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<!-- Qui abbiamo eventuale stile del componente "App", che è il contenitore generale -->
+<style></style>
